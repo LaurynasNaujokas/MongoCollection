@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -46,16 +47,22 @@ export default class CreateUser extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        console.log("person name: ", this.state.person_name, this.state.person_movie );
+        console.log(`The values are : 
+        ${this.state.person_name},
+        ${this.state.person_age},
+        ${this.state.person_movie},
+        ${this.state.person_gender}`);
+
         const obj = {
-          person_name: this.state.person_name,
-          person_age: this.state.person_age,
-          person_movie: this.state.person_movie,
-          person_gender: this.state.person_gender
-          
+            person_name: this.state.person_name,
+            person_age: this.state.person_age,
+            person_movie: this.state.person_movie,
+            person_gender: this.state.person_gender
+            
         };
-        axios.post('http://localhost:4000/add', obj)
-            .then(res => console.log(res.data));
+        axios.post('http://localhost:4000/business/add', obj)
+        .then(res => console.log(res.data)); 
+        console.log("person's details : ", obj ); 
         
         this.setState({
           person_name: '',

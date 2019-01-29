@@ -1,4 +1,4 @@
 
 module.exports = {
-    DB: 'mongodb://localhost:27017/mongo-collection'
+    DB: 'mongodb://localhost:27017/reactcrud'
 }
