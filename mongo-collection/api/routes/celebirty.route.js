@@ -1,10 +1,10 @@
 
 const express = require('express');
-const CelebrityRoutes = express.Router();
+const celebrityRoutes = express.Router();
 
 let Celebrity = require('../models/celebrity.model');
 
-CelebrityRoutes.route('/add').post(function(req,res) {
+celebrityRoutes.route('/add').post(function(req,res) {
     let celebrity = new Celebrity(req.body);
     celebrity.save()
         .then(celebrity => {
@@ -15,7 +15,7 @@ CelebrityRoutes.route('/add').post(function(req,res) {
         });
 });
 
-CelebrityRoutes.route('/get').post(function(req,res) {
+celebrityRoutes.route('/get').post(function(req,res) {
     Celebrity.find(function (err, celebrities) {
         if(err){
             console.log(err);
@@ -27,4 +27,4 @@ CelebrityRoutes.route('/get').post(function(req,res) {
 });
 
 
-module.exports = CelebrityRoutes;
+module.exports = celebrityRoutes;
