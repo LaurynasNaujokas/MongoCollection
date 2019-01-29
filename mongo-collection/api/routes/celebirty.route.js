@@ -25,3 +25,6 @@ CelebrityRoutes.route('/get').post(function(req,res) {
         }
     });
 });
+
+
+module.exports = CelebrityRoutes;

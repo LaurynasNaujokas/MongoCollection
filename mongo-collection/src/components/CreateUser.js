@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 
 export default class CreateUser extends Component {
     constructor(props) {
@@ -8,14 +10,14 @@ export default class CreateUser extends Component {
         this.onChangePersonMovie = this.onChangePersonMovie.bind(this);
         this.onChangePersonAge = this.onChangePersonAge.bind(this);
         this.onChangePersonGender = this.onChangePersonGender.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             person_name : '',
             person_movie : '',
             person_age : '',
             person_gender : ''
-        };
-
+        }
     }
 
     onChangePersonName(e) {
@@ -44,8 +46,17 @@ export default class CreateUser extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        console.log("From was submitted");
-    }
+        const obj = {
+          person_name: this.state.person_name,
+          
+        };
+        axios.post('http://localhost:4000/celebrity/add', obj)
+            .then(res => console.log(res.data));
+        
+        this.setState({
+          person_name: ''
+        })
+      }
 
     render() {
         return (

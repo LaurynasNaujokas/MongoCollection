@@ -10,7 +10,7 @@ let Celebrity = new Schema({
     person_age: {
         type: Number
     },
-    person_movie: {
+        person_movie: {
         type: String
     },
     person_gender: {
