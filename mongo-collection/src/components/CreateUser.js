@@ -113,6 +113,9 @@ export default class CreateUser extends Component {
                         onChange={this.onChangePersonGender}
                         />
                   </div>
+                    <form action='/api/images' method="post" enctype="multipart/form-data">
+                        <input type='file' name='image' />
+                    </form>
                   <div className="form-group">
                       <input type="submit" value="Register Celebrity" className="btn btn-primary"/>
                   </div>
