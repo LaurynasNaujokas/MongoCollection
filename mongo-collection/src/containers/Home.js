@@ -8,10 +8,8 @@ export default class CreateUser extends Component {
     constructor(props){
         super(props);
         this.state = {
-            
             celebrity : [],
             car : []
-        
         };
     }
 
