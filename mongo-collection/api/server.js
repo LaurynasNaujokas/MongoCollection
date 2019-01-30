@@ -6,7 +6,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./DB.js');
 const celebrityRoute = require('./celebrity.route');
-
+const carRoute = require('./car.route');
 
 
 mongoose.Promise = global.Promise;
@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use('/celebrity', celebrityRoute);
+app.use('/car', carRoute);
 
 app.listen(PORT, function(){
   console.log('Server is running on Port:',PORT);

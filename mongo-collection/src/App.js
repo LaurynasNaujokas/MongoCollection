@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import CreateUser from './components/CreateUser';
+import CreateCar from './components/CreateCar';
 import Home from './components/Home';
 
 class App extends Component {
@@ -20,10 +21,10 @@ class App extends Component {
                   <Link to={'/'} className="nav-link">Home</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={'/CreateUser'} className="nav-link">CreateUser</Link>
+                  <Link to={'/CreateUser'} className="nav-link">Create Celebrity</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={'/empty'} className="nav-link">Empty</Link>
+                  <Link to={'/CreateCar'} className="nav-link">Add New Car</Link>
                 </li>
               </ul>
             </div>
@@ -32,6 +33,7 @@ class App extends Component {
           <Switch>
               <Route exact path='/' component={ Home } />
               <Route exact path='/createUser' component={ CreateUser } /> 
+              <Route exact path='/createCar' component={ CreateCar } /> 
           </Switch>
         </div>
      </Router>

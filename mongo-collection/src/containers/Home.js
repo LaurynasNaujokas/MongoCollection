@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import TableRow from './TableRow';
+import CarCard from './CarCard';
+
 
 export default class CreateUser extends Component {
     constructor(props){
         super(props);
         this.state = {
             
-            celebrity : []
+            celebrity : [],
+            car : []
         
         };
     }
@@ -20,11 +23,28 @@ export default class CreateUser extends Component {
         .catch(function (err) {
             console.log("Something went wrong", err);
         });
+
+
+        axios.get('http://localhost:5000/car')
+        .then(response => {
+            this.setState({car: response.data});
+        })
+        .catch(function (err) {
+            console.log("Something went wrong", err);
+        });
     }
+
+    
 
     tabRow() {
         return this.state.celebrity.map(function(object, i ){
             return <TableRow obj={object} key={i} />;
+        });
+    }
+
+    carDetails() {
+        return this.state.car.map(function(object, i){
+            return <CarCard obj={object} key={i} />;
         });
     }
 
@@ -46,7 +66,14 @@ export default class CreateUser extends Component {
                         { this.tabRow() }
                     </tbody>
                 </table>
+                <div>
+                    <h2 align="center">Cars</h2>
+                    <div>
+                        { this.carDetails() }
+                    </div>
+                </div>
             </div>
+           
         )
     }
 }
