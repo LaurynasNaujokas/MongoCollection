@@ -12,7 +12,7 @@ class CreateUserForm extends Component {
                       <input 
                         type="text" 
                         className="form-control" 
-                        value={this.state.person_name}
+                        value={this.props.person_name}
                         onChange={this.onChangePersonName}
                         />
                   </div>
@@ -20,7 +20,7 @@ class CreateUserForm extends Component {
                       <label>Person Movie: </label>
                       <input type="text" 
                         className="form-control"
-                        value={this.state.person_movie}
+                        value={this.props.person_movie}
                         onChange={this.onChangePersonMovie}
                         />
                   </div>
@@ -28,7 +28,7 @@ class CreateUserForm extends Component {
                       <label>Person age: </label>
                       <input type="text" 
                         className="form-control"
-                        value={this.state.person_age}
+                        value={this.props.person_age}
                         onChange={this.onChangePersonAge}
                         />
                   </div>
@@ -36,13 +36,11 @@ class CreateUserForm extends Component {
                       <label>Person gender: </label>
                       <input type="text" 
                         className="form-control"
-                        value={this.state.person_gender}
+                        value={this.props.person_gender}
                         onChange={this.onChangePersonGender}
                         />
                   </div>
-                    <form action='/api/images' method="post" enctype="multipart/form-data">
-                        <input type='file' name='image' />
-                    </form>
+                    
                   <div className="form-group">
                       <input type="submit" value="Register Celebrity" className="btn btn-primary"/>
                   </div>

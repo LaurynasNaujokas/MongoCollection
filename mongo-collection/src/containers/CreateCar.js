@@ -12,13 +12,15 @@ export default class CreateCar extends Component {
         this.onChangeCarYear = this.onChangeCarYear.bind(this);
         this.onChangeCarColor = this.onChangeCarColor.bind(this);
         this.onChangeCarAbout = this.onChangeCarAbout.bind(this);
+        this.onChangeCarPrice = this.onChangeCarPrice.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             car_name : '',
             car_year : '',
             car_color : '',
-            car_about : ''
+            car_about : '',
+            car_price : ''
         };
     }
     
@@ -46,13 +48,20 @@ export default class CreateCar extends Component {
         });
     }
 
+    onChangeCarPrice(e) {
+        this.setState({
+            car_price : e.target.value
+        });
+    }
+    
     onSubmit(e) {
         e.preventDefault();
         const obj = {
             car_brand: this.state.car_brand,
             car_year: this.state.car_year,
             car_color: this.state.car_color,
-            car_about: this.state.car_about
+            car_about: this.state.car_about,
+            car_price: this.state.car_price
             
         };
         axios.post('http://localhost:5000/car/add', obj)
@@ -66,6 +75,7 @@ export default class CreateCar extends Component {
           car_year: '',
           colo_color: '',
           car_about: '',
+          car_price: ''
         });
       }
 

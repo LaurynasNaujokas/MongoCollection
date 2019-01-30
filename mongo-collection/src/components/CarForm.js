@@ -12,7 +12,7 @@ class CarForm extends Component {
                       <input 
                         type="text" 
                         className="form-control" 
-                        value={this.state.car_brand}
+                        value={this.props.car_brand}
                         onChange={this.onChangeCarBrand}
                         />
                   </div>
@@ -20,7 +20,7 @@ class CarForm extends Component {
                       <label>Car Year: </label>
                       <input type="text" 
                         className="form-control"
-                        value={this.state.car_year}
+                        value={this.props.car_year}
                         onChange={this.onChangeCarYear}
                         />
                   </div>
@@ -28,7 +28,7 @@ class CarForm extends Component {
                       <label>Car Color: </label>
                       <input type="text" 
                         className="form-control"
-                        value={this.state.car_color}
+                        value={this.props.car_color}
                         onChange={this.onChangeCarColor}
                         />
                   </div>
@@ -36,8 +36,16 @@ class CarForm extends Component {
                       <label>About car: </label>
                       <input type="text" 
                         className="form-control"
-                        value={this.state.car_about}
+                        value={this.props.car_about}
                         onChange={this.onChangeCarAbout}
+                        />
+                  </div>
+                  <div className="form-group">
+                      <label>Car price: </label>
+                      <input type="text" 
+                        className="form-control"
+                        value={this.props.car_price}
+                        onChange={this.onChangeCarPrice}
                         />
                   </div>
                     

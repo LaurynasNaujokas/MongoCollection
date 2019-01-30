@@ -4,8 +4,8 @@ import 'bulma/css/bulma.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import CreateUser from './components/CreateUser';
-import CreateCar from './components/CreateCar';
+import CreateUser from './containers/CreateUser';
+import CreateCar from './containers/CreateCar';
 import Home from './components/Home';
 
 class App extends Component {
