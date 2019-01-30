@@ -60,10 +60,10 @@ export default class CreateUser extends Component {
             person_gender: this.state.person_gender
             
         };
-        axios.post('http://localhost:4000/celebrity/add', obj)
+        axios.post('http://localhost:5000/celebrity/add', obj)
         .then(res => console.log(res.data))
         .catch((err) => {
-            console.log("Bad", err);
+            console.log("Something went wrong", err);
         }) ;
         
         
