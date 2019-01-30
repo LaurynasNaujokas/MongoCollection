@@ -8,7 +8,7 @@ celebrityRoutes.route('/add').post(function (req, res) {
   let celebrity = new Celebrity(req.body);
   celebrity.save()
     .then(celebrity => {
-      res.status(200).json({'celebrity': 'celebrity in added successfully'});
+      res.status(200).json({'celebrity': 'celebrity was added successfully'});
     })
     .catch(err => {
     res.status(400).send("unable to save to database");

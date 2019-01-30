@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const config = require('./DB.js');
 const celebrityRoute = require('./celebrity.route');
 
+
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, { useNewUrlParser: true }).then(
   () => {console.log('Database is connected') },
