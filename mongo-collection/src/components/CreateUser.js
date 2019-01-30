@@ -60,9 +60,12 @@ export default class CreateUser extends Component {
             person_gender: this.state.person_gender
             
         };
-        axios.post('http://localhost:4000/business/add', obj)
-        .then(res => console.log(res.data)); 
-        console.log("person's details : ", obj ); 
+        axios.post('http://localhost:4000/celebrity/add', obj)
+        .then(res => console.log(res.data))
+        .catch((err) => {
+            console.log("Bad", err);
+        }) ;
+        
         
         this.setState({
           person_name: '',
