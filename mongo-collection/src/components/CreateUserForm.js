@@ -40,7 +40,6 @@ class CreateUserForm extends Component {
                         onChange={this.onChangePersonGender}
                         />
                   </div>
-                    
                   <div className="form-group">
                       <input type="submit" value="Register Celebrity" className="btn btn-primary"/>
                   </div>

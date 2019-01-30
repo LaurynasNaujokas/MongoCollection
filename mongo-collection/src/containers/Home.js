@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import TableRow from './TableRow';
-import CarCard from './CarCard';
+import TableRow from '../components/TableRow';
+import CarCard from '../components/CarCard';
 
 
 export default class CreateUser extends Component {
@@ -35,7 +35,6 @@ export default class CreateUser extends Component {
     }
 
     
-
     tabRow() {
         return this.state.celebrity.map(function(object, i ){
             return <TableRow obj={object} key={i} />;
@@ -47,7 +46,6 @@ export default class CreateUser extends Component {
             return <CarCard obj={object} key={i} />;
         });
     }
-
 
     render() {
         return (

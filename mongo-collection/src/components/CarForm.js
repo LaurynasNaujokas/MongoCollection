@@ -47,8 +47,7 @@ class CarForm extends Component {
                         value={this.props.car_price}
                         onChange={this.onChangeCarPrice}
                         />
-                  </div>
-                    
+                  </div> 
                   <div className="form-group">
                       <input type="submit" value="Add New Car" className="btn btn-primary"/>
                   </div>
