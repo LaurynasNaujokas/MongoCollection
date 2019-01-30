@@ -18,7 +18,7 @@ export default class CreateUser extends Component {
             person_movie : '',
             person_age : '',
             person_gender : ''
-        }
+        };
     }
 
     onChangePersonName(e) {
@@ -69,7 +69,7 @@ export default class CreateUser extends Component {
           person_age: '',
           person_movie: '',
           person_gender: '',
-        })
+        });
       }
 
     render() {
