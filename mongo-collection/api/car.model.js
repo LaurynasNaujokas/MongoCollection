@@ -14,6 +14,9 @@ let Car = new Schema({
   },
   car_about: {
     type: String
+  },
+  car_price: {
+    type: Number
   }
 },{
     collection: 'car'
