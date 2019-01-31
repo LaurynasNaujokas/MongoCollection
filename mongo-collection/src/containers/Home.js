@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
 import CarCard from '../components/CarCard';
-
 
 export default class CreateUser extends Component {
     constructor(props){
@@ -13,7 +11,7 @@ export default class CreateUser extends Component {
     }
 
     componentDidMount(){
-        let car = this.state.car;
+        let car = this.props.car;
         if(!car){
             return (<div>...Loading</div>)
         }else
@@ -27,9 +25,9 @@ export default class CreateUser extends Component {
     }
 
     carDetails() {
-        const car = this.state.car;
+        const car = this.props.car;
         if(!car){
-            return ( <div>No Cars to beh shown at the moment...</div>)
+            return ( <div align="center">No Cars to be shown at the moment...</div>)
         }else
             return this.state.car.map(function(object, i){
             return <CarCard obj={object} key={i} />;
@@ -44,7 +42,6 @@ export default class CreateUser extends Component {
                         { this.carDetails() }
                     </div>
                 </div>
-           
         )
     }
 }
