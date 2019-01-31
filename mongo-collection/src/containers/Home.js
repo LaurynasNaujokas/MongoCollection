@@ -23,7 +23,11 @@ export default class CreateUser extends Component {
     }
 
     carDetails() {
-        return this.state.car.map(function(object, i){
+        const car = this.props.car;
+        if(!car){
+            return ( <div>No cars to be shown</div>)
+        }else
+            return this.state.car.map(function(object, i){
             return <CarCard obj={object} key={i} />;
         });
     }
