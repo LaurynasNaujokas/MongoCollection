@@ -27,7 +27,7 @@ export default class CreateUser extends Component {
     }
 
     carDetails() {
-        const car = this.props.car;
+        const car = this.state.car;
         if(!car){
             return ( <div>No Cars to beh shown at the moment...</div>)
         }else
