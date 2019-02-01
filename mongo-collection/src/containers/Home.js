@@ -11,10 +11,6 @@ export default class CreateUser extends Component {
     }
 
     componentDidMount(){
-        let car = this.props.car;
-        if(!car){
-            return (<div>...Loading</div>)
-        }else
         axios.get('http://localhost:5000/car')
         .then(response => {
             this.setState({car: response.data});
@@ -25,10 +21,6 @@ export default class CreateUser extends Component {
     }
 
     carDetails() {
-        let car = this.props.car;
-        if(!car){
-            return ( <div align="center">No Cars to be shown at the moment...</div>)
-        }else
             return this.state.car.map(function(object, i){
             return <CarCard obj={object} key={i} />;
         });
