@@ -3,11 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from '../containers/Home';
 import CreateCar from '../containers/CreateCar';
+import History from './History'
+
 
 class Navigation extends Component {
   render() {
     return (
-        <Router>
+        <Router History={History}>
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to={'/'} className="navbar-brand">Cars</Link>

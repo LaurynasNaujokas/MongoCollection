@@ -66,6 +66,7 @@ export default class CreateCar extends Component {
         };
         axios.post('http://localhost:5000/car/add', obj)
         .then(res => console.log(res.data))
+
         .catch((err) => {
             console.log("Something went wrong", err);
         }) ;
