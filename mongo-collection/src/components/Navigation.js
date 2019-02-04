@@ -10,6 +10,7 @@ class Navigation extends Component {
   render() {
     return (
         <Router History={History}>
+
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to={'/'} className="navbar-brand">Cars</Link>
@@ -30,6 +31,7 @@ class Navigation extends Component {
               <Route exact path='/createCar' component={ CreateCar } /> 
           </Switch>
         </div>
+        
      </Router>
     );
   }
