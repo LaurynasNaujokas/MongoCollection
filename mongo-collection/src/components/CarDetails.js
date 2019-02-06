@@ -22,5 +22,4 @@ class CarDetails extends Component {
 
 }
 
-
 export default CarDetails;
