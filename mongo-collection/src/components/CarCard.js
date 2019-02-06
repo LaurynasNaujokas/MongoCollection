@@ -16,14 +16,14 @@ class CarCard extends Component {
                     <p className="card-text">Color: {this.props.obj.car_color}</p>
                     <p className="card-text">Price: {this.props.obj.car_price}</p>
                     <p className="card-text">About: {this.props.obj.car_about}</p>
+                   
                     <Link to={{
                         pathname : `/CardDetails/${this.props.obj._id}`,     
                          }}>
                          
                          <input type="submit" value="More Details" className="btn btn-primary"/>
                     </Link>
-                </div>
-                
+                </div>  
         </div>
     );
   }
