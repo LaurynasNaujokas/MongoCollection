@@ -26,7 +26,7 @@ class Navigation extends Component {
             </div>
           </nav> <br/>
           
-          <Switch car={this.props.car}>
+          <Switch>
               <Route exact path='/' component={ Home } />
               <Route exact path='/createCar' component={ CreateCar } /> 
               <Route name="/CarDetails/:id" component={ CarDetails } />
