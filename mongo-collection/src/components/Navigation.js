@@ -18,21 +18,20 @@ class Navigation extends Component {
               <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                   <Link to={'/'} className="nav-link">Home</Link>
-                </li>
-                <li className="nav-item">
+              </li>
+              <li className="nav-item">
                   <Link to={'/CreateCar'} className="nav-link">Add New Car</Link>
-                </li>
+              </li>
               </ul>
             </div>
-          </nav> <br/>
-          
+          </nav>
+           <br/>
           <Switch>
               <Route exact path='/' component={ Home } />
               <Route exact path='/createCar' component={ CreateCar } /> 
               <Route name="/CarDetails/:id" component={ CarDetails } />
           </Switch>
-        </div>
-        
+        </div>  
      </Router>
     );
   }
