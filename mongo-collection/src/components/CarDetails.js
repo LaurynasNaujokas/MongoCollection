@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class CarDetails extends Component {
     render(){
-        console.log(this.props);
+   
         return(
             <div className="card text-white bg-dark mb-3" >
                 <div className="card-header">Car Info</div>
