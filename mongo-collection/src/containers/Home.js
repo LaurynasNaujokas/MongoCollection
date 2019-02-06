@@ -36,7 +36,6 @@ export default class CreateUser extends Component {
                     <h2 align="center">Cars</h2>
                     <div>
                         { this.carDetails() }
-                   
                     </div>
                 </div>
         )
