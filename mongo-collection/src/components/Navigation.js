@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
 import Home from '../containers/Home';
 import CreateCar from '../containers/CreateCar';
-import History from './History'
-
+import CarDetails from '../components/CarDetails';
+  
 
 class Navigation extends Component {
   render() {
     return (
-        <Router History={History}>
-
+     <Router>
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to={'/'} className="navbar-brand">Cars</Link>
@@ -25,10 +25,11 @@ class Navigation extends Component {
               </ul>
             </div>
           </nav> <br/>
-          <h2 className="title is-3-is-spaced">All Cars</h2> <br/>
-          <Switch>
+          
+          <Switch car={this.props.car}>
               <Route exact path='/' component={ Home } />
               <Route exact path='/createCar' component={ CreateCar } /> 
+              <Route name="/CarDetails/:id" component={ CarDetails } />
           </Switch>
         </div>
         

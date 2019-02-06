@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import CarCard from '../components/CarCard';
+import CarDetails from '../components/CarDetails';
+
 
 export default class CreateUser extends Component {
     constructor(props){
@@ -26,12 +28,22 @@ export default class CreateUser extends Component {
         });
     }
 
+    carDetailsPage() {
+        return this.state.car.map(function(object, i){
+        return <CarDetails obj={object} key={i} />;
+    });
+}
+
     render() {
+        console.log(this.props);
         return (
                 <div>
                     <h2 align="center">Cars</h2>
                     <div>
                         { this.carDetails() }
+                    </div>
+                    <div>
+                        { this.carDetailsPage() }
                     </div>
                 </div>
         )

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 
 class CarForm extends Component {
   render() {
     return (
         <div>
+            <Link to="/CarDetails">
              <h3 style={{ marginBottom: 10 }}>Add New Car: </h3>
               <form onSubmit={this.onSubmit}>
                   <div className="form-group">
@@ -52,6 +54,7 @@ class CarForm extends Component {
                       <input type="submit" value="Add New Car" className="btn btn-primary"/>
                   </div>
               </form>
+            </Link>
         </div>
     );
   }
