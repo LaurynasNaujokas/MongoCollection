@@ -1,4 +1,6 @@
-import { CAR_SELECTED }from '../actions/ActionTypes';
+import { CAR_SELECTED } from '../actions/ActionTypes';
+
+
 
 export default function (state=null, action) {
     switch(action.type) {

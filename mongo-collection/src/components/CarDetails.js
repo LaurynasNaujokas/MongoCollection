@@ -6,10 +6,10 @@ class CarDetails extends Component {
     render(){  
 
         if(!this.props.car) {
-            return (<Link to="/"><h2>Go to Cars</h2></Link>);
+            return (<Link to="/"><h6>Sorry, something went wrong, please go back</h6></Link>);
         }
         return(
-            <div className="card text-white bg-dark mb-3" >
+            <div className="card text-white bg-dark mb-1" >
                 <div className="card-header"><h1>Car Info</h1></div>
                     <div className="card-body">
                         <h5 className="card-title">ID: {this.props.car._id} </h5>
