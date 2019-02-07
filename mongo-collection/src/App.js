@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 
 import Navigation from './components/Navigation';
-import Home from './containers/Home';
 
 class App extends Component {
   render() {
     return (
+  <BrowserRouter>
       <div>
-        <Navigation />
+          <Navigation />
       </div>
+  </BrowserRouter>    
     );
   }
 }

@@ -1,18 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import { BrowserRouter} from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import {fetchAllCars} from './actions/CarActions';
+import allReducers from './reducers/index';
+import thunk from 'redux-thunk';
+
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+
+
+
+const store = createStore(allReducers, applyMiddleware(thunk));
+store.dispatch(fetchAllCars());
 
 ReactDOM.render(
-<BrowserRouter>
-<App />
-</BrowserRouter>,
-document.getElementById('root'));
+    <Provider store={store}>
+        <App />
+    </Provider>
+    ,document.getElementById('root'));
 
 
-serviceWorker.unregister();

@@ -1,43 +1,50 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import CarCard from '../components/CarCard';
+import React, {Component} from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { carSelected } from '../actions/CarSelectedAction';
 
 
 
-export default class CreateUser extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            car : []
-        };
-    }
+class PostList extends Component {
+renderList(){
+  return this.props.cars.map((car) => {
 
-    componentDidMount(){
-        axios.get('http://localhost:5000/car')
-        .then(response => {
-            this.setState({car: response.data});
-        })
-        .catch(function (err) {
-            console.log("Something went wrong", err);
-        });
-    }
-
-    carDetails() {
-            return this.state.car.map(function(object, i){
-            return <CarCard obj={object} key={i} />;
-        });
-    }
-
-
-    render() {
-        console.log(this.props);
-        return (
-                <div>
-                    <h2 align="center">Cars</h2>
-                    <div>
-                        { this.carDetails() }
-                    </div>
-                </div>
-        )
-    }
+    return ( 
+    <Link className="list-group" to="/PostDetailsInfo">
+      <li className="list-group-item" style={{marginTop: "10px"}}
+      key={car.id}
+      onClick={() => this.props.carSelected(car)}>
+      {car.car_brand}
+      </li>
+    </Link>
+    )
+  });
 }
+
+render(){
+  return(
+    <ul>
+      {this.renderList()}
+    </ul>
+  )
+}
+}
+const mapStateToProps = state => {
+  return {
+    cars: state.cars
+  };
+}
+
+function matchDispatchToProps(dispatch){
+
+  return bindActionCreators({carSelected : carSelected}, dispatch);
+}
+
+
+
+export default connect(
+  mapStateToProps,
+  matchDispatchToProps
+
+)(PostList);
