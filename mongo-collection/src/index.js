@@ -6,8 +6,6 @@ import {fetchAllCars} from './actions/CarActions';
 import allReducers from './reducers/index';
 import thunk from 'redux-thunk';
 
-
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 

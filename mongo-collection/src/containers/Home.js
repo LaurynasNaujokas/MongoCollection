@@ -15,7 +15,12 @@ renderList(){
       <li className="list-group-item" style={{marginTop: "10px"}}
       key={car.id}
       onClick={() => this.props.carSelected(car)}>
-      {car.car_brand}
+        <div className="card">
+            <div className="card-body">
+                <h5 className="card-title">Brand: {car.car_brand}</h5>
+                <p className="card-text">About: {car.car_about}</p>
+            </div>
+        </div>
       </li>
     </Link>
     )
