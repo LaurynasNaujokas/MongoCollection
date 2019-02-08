@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
+import CarForm from '../components/CarForm';
 
-//import CarForm from '../components/CarForm';
 
 export default class CreateCar extends Component {
     constructor(props) {
@@ -132,8 +132,8 @@ export default class CreateCar extends Component {
                       <input type="submit" value="Add New Car" className="btn btn-primary"/>
                   </div>
               </form>
-        </div>
-          </div>
+                </div>
+            </div>
         )
     }
 }
