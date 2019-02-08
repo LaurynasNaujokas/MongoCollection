@@ -3,8 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { carSelected } from '../actions/CarSelectedAction';
-import Pagination from '../components/Pagination';
 
+import Pagination from '../components/Pagination';
 
 
 class PostList extends Component {
@@ -18,6 +18,10 @@ renderList(){
       onClick={() => this.props.carSelected(car)}>
         <div className="card">
             <div className="card-body">
+                <img className="card-img-top"
+                src="https://www.deerpassgolf.com/wp-content/uploads/2018/12/volkswagen-golf-vw-golf-4.jpg"
+                alt="" style={{width : 200, height: 150, marginTop : 10}} />
+                
                 <h5 className="card-title">Brand: {car.car_brand}</h5>
                 <p className="card-text">About: {car.car_about}</p>
             </div>
