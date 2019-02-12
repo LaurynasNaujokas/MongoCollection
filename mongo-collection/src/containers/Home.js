@@ -6,7 +6,6 @@ import { carSelected } from '../actions/CarSelectedAction';
 
 import Pagination from '../components/Pagination';
 
-
 class PostList extends Component {
 renderList(){
   return this.props.cars.map((car) => {
