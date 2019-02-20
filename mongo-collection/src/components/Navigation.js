@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-
 import Home from '../containers/Home';
 import CreateCar from '../containers/CreateCar';
 import CarDetails from '../components/CarDetails';
   
-
 class Navigation extends Component {
   render() {
     return (
