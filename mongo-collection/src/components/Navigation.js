@@ -20,7 +20,7 @@ class Navigation extends Component {
               </li>
               <li className="nav-item">
                   <Link to={'/CreateCar'} className="nav-link">Add New Car</Link>
-              </li>
+              </li>`
               </ul>
             </div>
           </nav>
